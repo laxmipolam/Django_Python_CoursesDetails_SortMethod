@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Course : {{ course_instance.course.title }}</h1>
+  <p>Username:{{ course_instance.regstudent }}</p>
+  <p class="{% if course_instance.status == 'a' %}text-success{% elif course_instance.status == 'c' %}text-danger{% else %}text-warning{% endif %}">Lecture in {{ course_instance.get_status_display }}</p>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+  {% if submit %}
+     <br>
+     <br>
+     <h3>Output: </h3>
+     <h4>The registration closes on {{mydate}} (10 days after given date) </h4>
+  {% endif %}
+
+{% endblock %}

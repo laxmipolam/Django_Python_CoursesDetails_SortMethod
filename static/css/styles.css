@@ -1,0 +1,48 @@
+.sidebar-nav {
+    margin-top:2px;
+    padding: 0;
+    list-style: none;
+}
+
+.sidenav {
+  height: 200%;
+  position: ;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: lightblue;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.sidenav a, .sidenav h4{
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+body{
+  background-color: #EBF7FC;
+}
+
+.rightContent{
+  margin-top:20px;
+}
+
+.submit {
+  margin-left:350px;
+}
+
+.mypanel{
+  margin-top:20px;
+}
+
+.pagetitle{
+  text-align:center;
+}

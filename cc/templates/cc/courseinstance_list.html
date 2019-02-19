@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Resgistered Lectures</h1>
+
+    {% if courseinstance_list%}
+    <ul>
+
+      {% for courseinst in courseinstance_list %} 
+      <li>   
+               <a href="{% url 'course-detail' courseinst.course.pk %}">{{courseinst.course.title}}</a>  
+
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no registered courses.</p>
+    {% endif %}       
+{% endblock %}

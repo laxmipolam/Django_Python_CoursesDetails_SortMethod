@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+  <h3 class="pagetitle"> SORTING NUMBERS </h3>
+  <div class="panel panel-info mypanel">
+      <div class="panel-heading"><strong>Give numbers in space/comma separated form like "2 3 4" or "3,4,5"</strong></div>
+      <div class="panel-body">
+        <form action="" method="post">
+    	  {% csrf_token %}
+          <table>
+            {{ form.as_table }}
+          </table>
+          <input type="submit" class="submit btn btn-primary"value="Submit">
+       </form>
+      </div>
+    </div>
+  
+  {% if submit %}
+    {% if error %}
+    <div class="panel panel-info mypanel">
+      <div class="panel-heading">Output</div>
+      <div class="panel-body text-danger"><h2>{{numbers}}</h2></div>
+    </div>
+    {% else %}
+    <div class="panel panel-info mypanel">
+      <div class="panel-heading">Output</div>
+      <div class="panel-body">{{numbers}}</div>
+    </div>
+    {% endif %}
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Title: {{ course.title }}</h1>
+
+  <p><strong>Instructor:</strong> <a>{{ course.instructor }}</a></p>
+  <p><strong>Summary:</strong> {{ course.summary }}</p>
+  <p><strong>Major:</strong> {% for major in course.major.all %} {{ major}}{% if not forloop.last %}, {% endif %}{% endfor %}</p>  
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Lectures</h4>
+
+    {% for copy in course.courseinstance_set.all %}
+      <hr>
+      <p class="{% if copy.status == 'a' %}text-success{% elif copy.status == 'c' %}text-danger{% else %}text-warning{% endif %}">{{ copy.get_status_display }}</p>
+      {% if copy.status != 'a' %}
+        <p><strong>No availability</strong></p>
+      {% endif %}
+{% url 'index' %}
+      <p><a href="{{copy.id}}" ><strong>Id:</strong> {{copy.id}}</a></p>
+    {% endfor %}
+  </div>
+{% endblock %}

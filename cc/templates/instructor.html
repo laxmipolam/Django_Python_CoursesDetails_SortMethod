@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Instructors</h1>
+  {% if instructor %}
+  <ul>
+    {% for c in instructor %}
+      <li>
+        {{ c.first_name }} {{ c.last_name}} (DOB: {{c.date_of_birth}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no courses in the available</p>
+  {% endif %}       
+{% endblock %}

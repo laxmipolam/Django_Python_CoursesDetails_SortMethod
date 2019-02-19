@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Course Details</h1>
+
+  <ul>
+    <li><strong>Number of</strong> <a href="{% url 'courses' %}"><strong>Courses:</strong> {{ num_courses }}</a></li>
+    <li><strong>Total Lectures:</strong> {{ num_lectures }}</li>
+    <li><strong>Lectures available:</strong> {{ num_lectures_available }}</li>
+    <li><strong>Number of</strong> <a href="{% url 'instructors' %}"><strong>Instructors:</strong> {{ num_instructors}}</a></li>
+  </ul>
+{% endblock %}
