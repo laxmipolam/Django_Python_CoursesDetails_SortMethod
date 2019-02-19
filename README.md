@@ -1,7 +1,6 @@
 # django_Sort_SeeCoursesdetails_Auth
 
 Functionality to sort numbers is implemented 
-1. visit https://laxmipolam.cf
 2. Click on "Sort Numbers" from left navigation
 3. Give some input in text are in th comma separated or space separated form. This is a required field.
 4. Select ascending or descending as other input. Default is Ascending order.
